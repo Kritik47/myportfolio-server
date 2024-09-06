@@ -14,7 +14,7 @@ const BillionerSchema = new mongoose.Schema({
         required: true
     },
     networth: {
-        type: Number,
+        type: mongoose.Schema.Types.Decimal128, // Use Decimal128 for floating point numbers
         required: true
     },
     image: {
