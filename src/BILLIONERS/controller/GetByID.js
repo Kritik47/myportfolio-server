@@ -1,6 +1,8 @@
+const Billioner=require('../model/models');
 const GetByiD=async(req,res)=>{
     try{
-        res.send({msg:"data fetching throug iD.....",m:parseInt(req.params.id)})
+        const m=await Billioner.findById(req.params.id);
+        res.send({msg:"data fetching throug iD.....",DATA:m});
     }catch(e){
         res.send({msg:"Fetching error...."})
     }

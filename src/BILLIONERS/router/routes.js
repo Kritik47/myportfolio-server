@@ -1,8 +1,14 @@
 const express=require('express');
 const router=express.Router();
+const Post=require('../controller/Post');
 const Get=require('../controller/Get');
-const GetByiD=require('../controller/GetByID')
+const GetByiD=require('../controller/GetByID');
+const Put=require('../controller/Put');
+const Del=require('../controller/Del');
 router.use(express.json());
+router.post('/billioners',Post);
 router.get("/billioners",Get);
 router.get("/billioners/:id",GetByiD);
+router.put("/billioners/:id",Put);
+router.delete("/billioners/:id",Del);
 module.exports=router;

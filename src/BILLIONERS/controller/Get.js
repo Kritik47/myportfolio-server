@@ -1,6 +1,8 @@
+const Billioner=require('../model/models');
 const Get=async(req,res)=>{
     try{
-        res.send({msg:"data fetching....."})
+        const m=await Billioner.find({});
+        res.send({msg:"data fetching.....",DATA:m});
     }catch(e){
         res.send({msg:"Fetching error...."})
     }
