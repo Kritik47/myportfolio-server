@@ -1,7 +1,9 @@
 const mongoose=require('mongoose');
+const dotenv=require('dotenv');
+dotenv.config();
 const ConnectDb=async()=>{
     try{
-        await mongoose.connect("mongodb+srv://KRITIKKUMAR:MUNDABENZ@cluster0.qyvjbzi.mongodb.net/MYPORTFOLIO?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect(`${process.env.PORTFOLIO_DB}`);
         console.log("MongoDb Connected.......")
     }catch(e){
         console.log("Connection Error....")

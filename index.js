@@ -1,14 +1,13 @@
-
 const express=require('express');
-const cors=require('cors');
 const app=express();
+const ConnectDb=require('./src/MYPORTFOLIO/lib/db');
+ConnectDb();
 const dotenv=require('dotenv');
 dotenv.config();
-const router=require('./src/MDMART/router/router');
-const Db=require('./src/MDMART/lib/lib');
-Db();
+const cors=require('cors');
 app.use(cors());
+const router=require('./src/MYPORTFOLIO/router/router');
 app.use(router);
-app.listen(process.env.MDMART_PORT,()=>{
-    console.log(`listen in ${process.env.MDMART_PORT}`);
-});
+app.listen(process.env.PORTFOLIO_PORT,()=>{
+    console.log(`i listen ${process.env.PORTFOLIO_PORT}`);
+})
