@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const BillionerSchema = new mongoose.Schema({
     name: {
         type: String,

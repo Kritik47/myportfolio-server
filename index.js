@@ -1,11 +1,14 @@
-const express = require('express');
-const app = express();
+
+const express=require('express');
+const cors=require('cors');
+const app=express();
 const dotenv=require('dotenv');
-const ConnectDb = require('./src/BILLIONERS/lib/db');
-const router = require('./src/BILLIONERS/router/routes');
 dotenv.config();
-ConnectDb();
+const router=require('./src/MDMART/router/router');
+const Db=require('./src/MDMART/lib/lib');
+Db();
+app.use(cors());
 app.use(router);
-app.listen(process.env.BILLIONERS_PORT, () => {
-    console.log("Server is running on port 8000");
+app.listen(process.env.MDMART_PORT,()=>{
+    console.log(`listen in ${process.env.MDMART_PORT}`);
 });
